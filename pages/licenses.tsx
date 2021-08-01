@@ -1,6 +1,6 @@
 import { Card } from "../components/Card";
 
-export default function Licenses() {
+const Licenses = () => {
   return (
     <>
       <div className="pb-3 mb-4 mx-auto text-center">
@@ -67,4 +67,6 @@ export default function Licenses() {
       </div>
     </>
   );
-}
+};
+
+export default Licenses;

@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 
-export default function Index() {
-  return <Link href="/licenses">Zum Lizenzrechner</Link>;
-}
+const Index = () => {
+  return <Link href="/license-calculator">Zum Lizenzrechner</Link>;
+};
+
+export default Index;

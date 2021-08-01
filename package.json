@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "cucumber-js test/features/**/*.feature --require-module ts-node/register --require test/steps/**/*.ts --publish-quiet"
   },
   "dependencies": {
     "bootstrap": "^5.0.2",
@@ -22,6 +23,7 @@
     "@types/react": "17.0.15",
     "eslint": "7.32.0",
     "eslint-config-next": "11.0.1",
+    "ts-node": "^10.1.0",
     "typescript": "4.3.5"
   }
 }

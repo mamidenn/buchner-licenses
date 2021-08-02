@@ -1,10 +1,7 @@
 import { setWorldConstructor } from "@cucumber/cucumber";
 
-class CustomWorld {
-  variable: number;
-  constructor() {
-    this.variable = 0;
-  }
+export class CustomWorld {
+  variable = 0;
   setTo = (number: number) => {
     this.variable = number;
   };

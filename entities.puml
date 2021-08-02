@@ -1,0 +1,31 @@
+@startuml
+object Lizenz
+object Einzellizenz
+object "Floating Lizenz" as FL
+
+object Faschaftzlizenzpaket
+object "kleine FS-Lizenz" as kfsl
+object "mittlere FS-Lizenz" as mfsl
+object "große FS-Lizenz" as gfsl
+
+object Angebot
+object Angebotsscreen
+
+Lizenz <|-- Einzellizenz
+Lizenz <|-- FL
+
+Faschaftzlizenzpaket <|-- kfsl
+Faschaftzlizenzpaket <|-- mfsl
+Faschaftzlizenzpaket <|-- gfsl
+
+kfsl --* "5" Einzellizenz
+mfsl --* "10" Einzellizenz
+gfsl --* "20" Einzellizenz
+
+Faschaftzlizenzpaket "0..n" *-- Angebot
+Einzellizenz "0..n" *-- Angebot
+FL "0..n" *-- Angebot
+
+Angebot "3" o-- Angebotsscreen
+
+@enduml

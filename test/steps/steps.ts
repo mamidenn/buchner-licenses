@@ -1,14 +1,15 @@
 import { Given, Then, When } from "@cucumber/cucumber";
 import assert from "assert";
+import { CustomWorld } from "./world";
 
-Given("a variable set to {int}", function (number) {
+Given<CustomWorld>("a variable set to {int}", function (number) {
   this.setTo(number);
 });
 
-When("I increment the variable by {int}", function (number) {
+When<CustomWorld>("I increment the variable by {int}", function (number) {
   this.incrementBy(number);
 });
 
-Then("the variable should contain {int}", function (number) {
+Then<CustomWorld>("the variable should contain {int}", function (number) {
   assert.equal(this.variable, number);
 });

@@ -3,25 +3,25 @@ import classNames from "classnames";
 
 type CardProps = {
   header: string;
-  primary?: boolean;
+  style?: "primary" | "muted" | "default";
 };
 
 export const Card: FunctionComponent<CardProps> = ({
   header,
   children,
-  primary,
+  style = "default",
 }) => {
   return (
     <div
       className={classNames("card", "rounded-3", "shadow-sm", {
-        "border-primary": primary,
+        "border-primary": style == "primary",
       })}
     >
       <div
         className={classNames("card-header", {
-          "bg-primary": primary,
-          "text-white": primary,
-          "border-primary": primary,
+          "bg-primary": style == "primary",
+          "text-white": style == "primary",
+          "border-primary": style == "primary",
         })}
       >
         <h4>{header}</h4>

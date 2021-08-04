@@ -2,13 +2,13 @@ import classNames from "classnames";
 import { ErrorMessage, Field, Form, Formik, FormikErrors } from "formik";
 import React, { FunctionComponent } from "react";
 
-interface FormValues {
+export interface LicenseCalculatorFormValues {
   numLicenses: number;
   numFloating: number;
 }
 
 type LicenseCalculatorFormProps = {
-  onSubmit: (values: FormValues) => void;
+  onSubmit: (values: LicenseCalculatorFormValues) => void;
 };
 
 export const LicenseCalculatorForm: FunctionComponent<LicenseCalculatorFormProps> =
@@ -22,7 +22,7 @@ export const LicenseCalculatorForm: FunctionComponent<LicenseCalculatorFormProps
           <Formik
             initialValues={{ numLicenses: 1, numFloating: 0 }}
             validate={(values) => {
-              let errors: FormikErrors<FormValues> = {};
+              let errors: FormikErrors<LicenseCalculatorFormValues> = {};
               if (values.numLicenses < 1) {
                 errors.numLicenses = "Bitte wählen Sie mindestens eine Lizenz";
               }

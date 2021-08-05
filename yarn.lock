@@ -302,6 +302,11 @@
     "@popperjs/core" "^2.9.2"
     "@types/jquery" "*"
 
+"@types/dinero.js@^1.8.1":
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/@types/dinero.js/-/dinero.js-1.8.1.tgz#9877fbaef88d1685fb901cd66b19ba61d0457947"
+  integrity sha512-3hEsGSPlKWiaR/DOw5zQXum7bkplnfUK9V1UYQYDzMsYGbWFS1OsqIMLIRutVIX4jGSAmLaBp4CkrtFYf/odUQ==
+
 "@types/jquery@*":
   version "3.5.6"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.5.6.tgz#97ac8e36dccd8ad8ed3f3f3b48933614d9fd8cf0"
@@ -1027,6 +1032,13 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.8.tgz#d2266a792729fb227cd216fb572f43728e1ad340"
   integrity sha512-jXKhWqXPmlUeoQnF/EhTtTl4C9SnrxSH/jZUih3jmO6lBKr99rP3/+FmrMj4EFpOXzMtXHAZkd3x0E6h6Fgflw==
 
+csv-parser@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/csv-parser/-/csv-parser-3.0.0.tgz#b88a6256d79e090a97a1b56451f9327b01d710e7"
+  integrity sha512-s6OYSXAK3IdKqYO33y09jhypG/bSDHPuyCme/IdEHfWpLf/jKcpitVFyOC6UemgGk8v7Q5u2XE0vvwmanxhGlQ==
+  dependencies:
+    minimist "^1.2.0"
+
 d@1, d@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/d/-/d-1.0.1.tgz#8698095372d58dbee346ffd0c7093f99f8f9eb5a"
@@ -1109,6 +1121,11 @@ diffie-hellman@^5.0.0:
     bn.js "^4.1.0"
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
+
+dinero.js@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/dinero.js/-/dinero.js-1.9.0.tgz#15cd6b8290538077cf80c35f4a26884d8806050f"
+  integrity sha512-gbDFhCCe/ba9pU2P232FS54LFPCLeGTb8vcrgsjmXHknu/VDHIgFecA8mxLYQsqVKkHoHSCUq95ojYOakzuweA==
 
 dir-glob@^3.0.1:
   version "3.0.1"

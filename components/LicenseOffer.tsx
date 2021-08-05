@@ -1,66 +1,90 @@
 import React, { FunctionComponent } from "react";
+import { ButtonCard } from "./ButtonCard";
 import { Card } from "./Card";
 
+export interface LicenseOffer {
+  single: number;
+  smallBundle: number;
+  mediumBundle: number;
+  largeBundle: number;
+  price: number;
+}
+
 type LicenseOfferProps = {
-  licenses: { numLicenses: number; numFloating: number };
+  offers: [LicenseOffer, LicenseOffer, LicenseOffer];
 };
 
 export const LicenseOffer: FunctionComponent<LicenseOfferProps> = ({
-  licenses,
+  offers,
 }) => {
   return (
     <div className="row row-cols-1 row-cols-md-3 mb-3 text-center">
-      <div className="col">
-        <Card header="Gratis">
-          <h1 className="card-title text-nowrap">
-            {licenses.numLicenses}€
-            <small className="text-muted fw-light">/Monat</small>
-          </h1>
+      <div className="col mb-3">
+        <ButtonCard header="Genau passend" button="Kaufen" style="muted">
+          <h1 className="card-title text-nowrap">{offers[0].price}€</h1>
           <ul className="list-unstyled mt-3 mb-4">
-            <li>Velit impedit</li>
-            <li>dolore ipsa est</li>
-            <li>
-              <strong>repudiandae</strong> voluptates
-            </li>
+            {offers[0].single > 0 && <li>{offers[0].single} × Einzellizenz</li>}
+            {offers[0].smallBundle > 0 && (
+              <li>{offers[0].smallBundle} × kleine FS-Lizenz</li>
+            )}
+            {offers[0].mediumBundle > 0 && (
+              <li>{offers[0].mediumBundle} × mittlere FS-Lizenz</li>
+            )}
+            {offers[0].largeBundle > 0 && (
+              <li>{offers[0].largeBundle} × große FS-Lizenz</li>
+            )}
           </ul>
-          <button className="w-100 btn btn-lg btn-outline-primary">
-            Jetzt gratis loslegen
-          </button>
-        </Card>
+        </ButtonCard>
       </div>
-      <div className="col">
-        <Card header="Persönlich">
-          <h1 className="card-title text-nowrap">
-            15€<small className="text-muted fw-light">/Monat</small>
-          </h1>
+      <div className="col mb-3">
+        <ButtonCard header="Günstigstes Angebot" button="Kaufen">
+          <h1 className="card-title text-nowrap">{offers[1].price}€</h1>
           <ul className="list-unstyled mt-3 mb-4">
-            <li>Velit impedit</li>
-            <li>dolore ipsa est</li>
-            <li>reiciendis</li>
-            <li>blanditiis nobis</li>
+            {offers[1].single > 0 && <li>{offers[1].single} × Einzellizenz</li>}
+            {offers[1].smallBundle > 0 && (
+              <li>{offers[1].smallBundle} × kleine FS-Lizenz</li>
+            )}
+            {offers[1].mediumBundle > 0 && (
+              <li>{offers[1].mediumBundle} × mittlere FS-Lizenz</li>
+            )}
+            {offers[1].largeBundle > 0 && (
+              <li>{offers[1].largeBundle} × große FS-Lizenz</li>
+            )}
           </ul>
-          <button className="w-100 btn btn-lg btn-primary">Kaufen</button>
-        </Card>
+          {offers[0].price > offers[1].price && (
+            <div className="mb-2">
+              Sie sparen{" "}
+              <strong>
+                {(
+                  ((offers[0].price - offers[1].price) / offers[0].price) *
+                  100
+                ).toLocaleString("de-DE", { maximumFractionDigits: 0 })}
+                %
+              </strong>
+            </div>
+          )}
+        </ButtonCard>
       </div>
-      <div className="col">
-        <Card header="Klassenraum" style="primary">
-          <h1 className="card-title text-nowrap">
-            <small className="text-muted fw-light">ab</small> 50€
-            <small className="text-muted fw-light">/Monat</small>
-          </h1>
+      <div className="col mb-3">
+        <ButtonCard
+          header="Darf's etwas mehr sein?"
+          style="primary"
+          button="Jetzt zuschlagen"
+        >
+          <h1 className="card-title text-nowrap">{offers[2].price}€</h1>
           <ul className="list-unstyled mt-3 mb-4">
-            <li>Velit impedit</li>
-            <li>dolore ipsa est</li>
-            <li>reiciendis</li>
-            <li>blanditiis nobis</li>
-            <li>
-              <strong>ipsam asperiores</strong>
-            </li>
+            {offers[2].single > 0 && <li>{offers[2].single} × Einzellizenz</li>}
+            {offers[2].smallBundle > 0 && (
+              <li>{offers[2].smallBundle} × kleine FS-Lizenz</li>
+            )}
+            {offers[2].mediumBundle > 0 && (
+              <li>{offers[2].mediumBundle} × mittlere FS-Lizenz</li>
+            )}
+            {offers[2].largeBundle > 0 && (
+              <li>{offers[2].largeBundle} × große FS-Lizenz</li>
+            )}
           </ul>
-          <button className="w-100 btn btn-lg btn-primary">
-            Kontaktieren Sie uns
-          </button>
-        </Card>
+        </ButtonCard>
       </div>
     </div>
   );

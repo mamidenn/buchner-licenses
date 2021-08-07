@@ -4,6 +4,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import csvParser from "csv-parser";
 import { LicenseCalculatorFormValues } from "../../components/LicenseCalculatorForm";
 import { LicenseOffer } from "../../components/LicenseOfferCards";
+import path from "path";
 
 type LicensePrices = {
   Berechnungsformel: number;
@@ -17,7 +18,9 @@ type LicensePrices = {
 const getPrices = () =>
   new Promise<LicensePrices[]>((resolve) => {
     const results: LicensePrices[] = [];
-    createReadStream("public/data/license-bundles.csv")
+    createReadStream(
+      path.join(process.cwd(), "public/data/license-bundles.csv")
+    )
       .pipe(
         csvParser({
           mapHeaders: ({ header }) => header.trim(),

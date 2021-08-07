@@ -10,6 +10,7 @@
     "test": "cucumber-js test/features/**/*.feature --require-module ts-node/register --require test/steps/**/*.ts --publish-quiet"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
     "classnames": "^2.3.1",
     "csv-parser": "^3.0.0",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@cucumber/cucumber": "^7.3.1",
+    "@types/axios": "^0.14.0",
     "@types/bootstrap": "^5.0.17",
     "@types/dinero.js": "^1.8.1",
     "@types/react": "17.0.15",

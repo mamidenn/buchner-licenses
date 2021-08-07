@@ -13,6 +13,7 @@ const defaultOffer: [LicenseOffer, LicenseOffer, LicenseOffer] = [
     smallBundle: 0,
     mediumBundle: 0,
     largeBundle: 0,
+    floating: 0,
     price: 228,
   },
   {
@@ -20,6 +21,7 @@ const defaultOffer: [LicenseOffer, LicenseOffer, LicenseOffer] = [
     smallBundle: 0,
     mediumBundle: 1,
     largeBundle: 0,
+    floating: 0,
     price: 75,
   },
   {
@@ -27,6 +29,7 @@ const defaultOffer: [LicenseOffer, LicenseOffer, LicenseOffer] = [
     smallBundle: 1,
     mediumBundle: 1,
     largeBundle: 0,
+    floating: 0,
     price: 117,
   },
 ];

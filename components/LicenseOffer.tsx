@@ -7,6 +7,7 @@ export interface LicenseOffer {
   smallBundle: number;
   mediumBundle: number;
   largeBundle: number;
+  floating: number;
   price: number;
 }
 
@@ -33,6 +34,9 @@ export const LicenseOffer: FunctionComponent<LicenseOfferProps> = ({
             {offers[0].largeBundle > 0 && (
               <li>{offers[0].largeBundle} × große FS-Lizenz</li>
             )}
+            {offers[0].floating > 0 && (
+              <li>{offers[0].floating} × Floating Lizenz</li>
+            )}
           </ul>
         </ButtonCard>
       </div>
@@ -49,6 +53,9 @@ export const LicenseOffer: FunctionComponent<LicenseOfferProps> = ({
             )}
             {offers[1].largeBundle > 0 && (
               <li>{offers[1].largeBundle} × große FS-Lizenz</li>
+            )}
+            {offers[1].floating > 0 && (
+              <li>{offers[1].floating} × Floating Lizenz</li>
             )}
           </ul>
           {offers[0].price > offers[1].price && (
@@ -82,6 +89,9 @@ export const LicenseOffer: FunctionComponent<LicenseOfferProps> = ({
             )}
             {offers[2].largeBundle > 0 && (
               <li>{offers[2].largeBundle} × große FS-Lizenz</li>
+            )}
+            {offers[2].floating > 0 && (
+              <li>{offers[2].floating} × Floating Lizenz</li>
             )}
           </ul>
         </ButtonCard>

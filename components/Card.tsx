@@ -18,13 +18,13 @@ export const Card: FunctionComponent<CardProps> = ({
       })}
     >
       <div
-        className={classNames("card-header", {
+        className={classNames("card-header", "py-3", {
           "bg-primary": style == "primary",
           "text-white": style == "primary",
           "border-primary": style == "primary",
         })}
       >
-        <h4>{header}</h4>
+        <h4 className="my-0">{header}</h4>
       </div>
       <div className="card-body">{children}</div>
     </div>
